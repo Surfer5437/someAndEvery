@@ -16,12 +16,17 @@ function hasOddNumber(arr) {
 // Write a function called hasAZero which accepts a number and returns true if that number contains at least one zero. Otherwise, the function should return false
 // hasAZero(33321232131012) // true
 // hasAZero(1212121) // false
-function hasAZero(numbers) {
-    const arr = Array.from(numbers); //convert to array so it can iterate over each number.
-    const finalbool = arr.some(function (num) {
-        return num.contains(0); //checking if a number contains a zero.
-    })
-    return finalbool; //return the final boolean of the some loop, but it's always returning false
+function hasAZero(nums) {
+    const num = nums.toString();
+    const arr = [];
+    for (let i = 0; i < num.length; i++) {
+        const element = num[i];
+        arr.push(element);
+    }
+    console.log(arr)
+    return arr.some(function (nu) {
+        return nu === '0';
+    });
 };
 
 
@@ -32,10 +37,9 @@ function hasAZero(numbers) {
 // hasOnlyOddNumbers([1,3,5,7]) // true
 // hasOnlyOddNumbers([1,2,3,5,7]) // false
 function hasOnlyOddNumbers(arr) {
-    const oddNum = arr.every(num => {
+    return arr.every(num => {
         return num % 2 === 1;
     });
-    return oddNum;
 };
 
 
@@ -45,7 +49,11 @@ function hasOnlyOddNumbers(arr) {
 // Write a function called hasNoDuplicates which accepts an array and returns true if there are no duplicate values (more than one element in the array that has the same value as another). If there are any duplicates, the function should return false.
 // hasNoDuplicates([1,2,3,1]) // false
 // hasNoDuplicates([1,2,3]) // true
-
+function hasNoDuplicates(nums) {
+    return nums.every(function (num) {
+        return nums.indexOf(num) === nums.lastIndexOf(num);
+    });
+};
 
 
 
