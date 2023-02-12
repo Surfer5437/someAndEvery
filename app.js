@@ -16,7 +16,13 @@ function hasOddNumber(arr) {
 // Write a function called hasAZero which accepts a number and returns true if that number contains at least one zero. Otherwise, the function should return false
 // hasAZero(33321232131012) // true
 // hasAZero(1212121) // false
-
+function hasAZero(numbers) {
+    const arr = Array.from(numbers);
+    const finalbool = arr.some(function (num) {
+        return num.contains(0);
+    })
+    return finalbool;
+};
 
 
 
