@@ -17,11 +17,11 @@ function hasOddNumber(arr) {
 // hasAZero(33321232131012) // true
 // hasAZero(1212121) // false
 function hasAZero(numbers) {
-    const arr = Array.from(numbers);
+    const arr = Array.from(numbers); //convert to array so it can iterate over each number.
     const finalbool = arr.some(function (num) {
-        return num.contains(0);
+        return num.contains(0); //checking if a number contains a zero.
     })
-    return finalbool;
+    return finalbool; //return the final boolean of the some loop, but it's always returning false
 };
 
 
